@@ -5,54 +5,55 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Spaceflight News</title>
-  <script type="module" crossorigin src="/fep1-eindopdracht-bikcodes/assets/index-b482d022.js"></script>
-  <link rel="stylesheet" href="/fep1-eindopdracht-bikcodes/assets/index-a1b1ba22.css">
+  <script type="module" crossorigin src="/fep1-eindopdracht-bikcodes/assets/index-0516bb5a.js"></script>
+  <link rel="stylesheet" href="/fep1-eindopdracht-bikcodes/assets/index-fc3de4fd.css">
 </head>
 <body>
   <header>
     <h1>Spaceflight News</h1>
-    <h2 class="countdown">Assignment Time remaining:</h2>
-    <h3>TEST</h3>
+    <h2>Assignment Time remaining: 
+      <span id="countdown-timer"></span>
+    </h2>
     <button id="form" class="fab">+</button>
   </header>
   <container>
+    <form class="filter" action="">
+      <fieldset class="searchFieldset">
+        <legend>Text search</legend>
+        <label for="input">Search:</label>
+        <input type="text" id="input" name="search" placeholder="Enter text here">
+      </fieldset>
+      <fieldset class="launchEventsFieldset">
+        <legend>Events & Launches</legend>
+        <input type="checkbox" id="hasEvent" name="has_event_launch" value="eventValue">
+        <label for="hasEvent">Has Event</label><br>
+        <input type="checkbox" id="hasLaunch" name="has_event_launch" value="launchValue">
+        <label for="hasLaunch">Has Launch</label>
+      </fieldset>
+      <fieldset class="typeFieldset">
+        <legend>Article type</legend>
+        <input type="radio" id="articleRadio" name="article_Type" value="articleValue" checked>
+        <label for="articleRadio">Articles</label><br>
+        <input type="radio" id="blogRadio" name="article_Type" value="blogValue">
+        <label for="blogRadio">Blogs</label><br>
+        <input type="radio" id="reportRadio" name="article_Type" value="reportValue">
+        <label for="reportRadio">Reports</label>
+      </fieldset>
+      <fieldset class="dateFieldset">
+        <legend>Article date</legend>
+        <input type="date" id="inputDate" name="input_date">
+      </fieldset>
+    </form>
     <nav id="source-chips"></nav>
     <main id="display-data">
     </main>
     <aside>
-      <form class="filter" action="">
-        <fieldset class="searchFieldset">
-          <legend>Text search</legend>
-          <label for="input">Search:</label>
-          <input type="text" id="input" name="search" placeholder="Enter text here">
-        </fieldset>
-        <fieldset class="launchEventsFieldset">
-          <legend>Events & Launches</legend>
-          <input type="checkbox" id="hasEvent" name="has_event_launch" value="eventValue">
-          <label for="hasEvent">Has Event</label><br>
-          <input type="checkbox" id="hasLaunch" name="has_event_launch" value="launchValue">
-          <label for="hasLaunch">Has Launch</label>
-        </fieldset>
-        <fieldset class="typeFieldset">
-          <legend>Article type</legend>
-          <input type="radio" id="articleRadio" name="article_Type" value="articleValue" checked>
-          <label for="articleRadio">Articles</label><br>
-          <input type="radio" id="blogRadio" name="article_Type" value="blogValue">
-          <label for="blogRadio">Blogs</label><br>
-          <input type="radio" id="reportRadio" name="article_Type" value="reportValue">
-          <label for="reportRadio">Reports</label>
-        </fieldset>
-        <fieldset class="dateFieldset">
-          <legend>Article date</legend>
-          <input type="date" id="inputDate" name="input_date">
-        </fieldset>
-      </form>
       <section class="most-read-articles">
         <h3>Most read articles</h3>
       </section>
       <section class="image-section">
         <h3>Recent SpaceX Launch</h3>
-        <img src="https://images2.imgbox.com/33/2e/k6VE4iYl_o.png" alt="Recent SpaceX Launch">
+        <img id="launchImg" alt="Recent SpaceX Launch">
       </section>
     </aside>
   </container>
